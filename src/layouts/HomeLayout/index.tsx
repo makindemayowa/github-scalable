@@ -1,9 +1,16 @@
 import React from 'react'
+import Input from 'components/Common/Input'
+import './style.css'
 
 const Home = () =>
-  <div>
-    <h1>Contact blocks</h1>
-    <p>Develop your pages by copy and pasting ready blocks</p>
+  <div className="homeLayout__container">
+    <h1 className="homeLayout__text">Search Github User</h1>
+    <div className="homeLayout__inputWrapper">
+      <Input
+        className="homeLayout__input"
+        placeholder="Enter username"
+      />
+    </div>
   </div>
 
 export default Home

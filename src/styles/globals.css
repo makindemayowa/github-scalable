@@ -6,9 +6,11 @@ html {
   box-sizing: inherit;
 }
 
-body, html {
+body, html, body div#root {
   margin: 0;
   padding: 0;
+  width: 100%;
+  height: 100%;
   overflow-x: hidden;
   font-family: 'Gotham SSm A', 'Gotham SSm B';
 }
@@ -29,11 +31,14 @@ a {
 }
 
 input, select {
-  border: none;
+  border: 2px solid #ccc;
+  border-radius: 4px;
   width: 100%;
   background: none;
   font-size: inherit;
   padding: 0;
   margin: 0;
   color: inherit;
+  padding: 12px 20px 12px 40px;
 }
+
