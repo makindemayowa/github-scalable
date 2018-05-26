@@ -1,23 +1,23 @@
 import { takeEvery, all, fork, call, put } from 'redux-saga/effects'
-import { getStats } from 'api'
+import { searchUsers } from 'api'
 import t from './types'
 
-function* getStatsSaga({ endpoint, offset }) {
+function* searchUsersSaga({ query }) {
   try {
-    const stats = yield call(getStats, endpoint, offset)
-    yield put({ type: t.GET_REQUEST_SUCCESS, stats })
+    const stats = yield call(searchUsers, query)
+    yield put({ type: t.SEARCH_REQUEST_SUCCESS, stats })
   } catch (error) {
     // TODO: handle errors better
-    yield put({ type: t.GET_REQUEST_ERROR, error })
+    yield put({ type: t.SEARCH_REQUEST_ERROR, error })
   }
 }
 
-function* watchGetStatsSaga() {
-  yield takeEvery(t.GET_REQUEST, getStatsSaga)
+function* watchSearchUsersSaga() {
+  yield takeEvery(t.SEARCH_REQUEST, searchUsersSaga)
 }
 
 export default function* () {
   yield all([
-    fork(watchGetStatsSaga),
+    fork(watchSearchUsersSaga),
   ])
 }

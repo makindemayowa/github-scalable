@@ -1,32 +1,27 @@
 import types from './types'
 
-interface StatsInterface {
-  [id: string]: any
-}
-
 export interface UserState {
-  title: string
-  endpoint: string
+  username: string
+  error: string
   isLoading: boolean
-  stats: StatsInterface
+  items: Array<any>
 }
 
-export interface FetchSuccess {
-  type: types.GET_REQUEST_SUCCESS
-  stats: StatsInterface
+export interface SearchRequest {
+  type: types.SEARCH_REQUEST
+  query: string
 }
 
-export interface FetchRequest {
-  type: types.GET_REQUEST
-  title: string
-  endpoint: string
-  offset: number
+export interface SearchSuccess {
+  type: types.SEARCH_REQUEST_SUCCESS,
+  items: Array<any>
 }
 
-export interface FetchError {
-  type: types.GET_REQUEST_ERROR
+export interface SearchError {
+  type: types.SEARCH_REQUEST_ERROR,
+  error: string
 }
 
-export type TableInterfaces = FetchSuccess
-  | FetchRequest
-  | FetchError
+export type UserInterfaces = SearchRequest
+  | SearchSuccess
+  | SearchError

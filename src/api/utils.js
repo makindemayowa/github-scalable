@@ -27,13 +27,7 @@ function encodeQuery(obj) {
   const str = []
   for (const key of Object.keys(obj)) {
     const value = obj[key]
-    if (Array.isArray(value)) {
-      value.forEach(val =>
-        str.push(asKeyValue(key, val))
-      )
-    } else {
-      str.push(asKeyValue(key, value))
-    }
+    str.push(asKeyValue(key, value))
   }
   return str.join('&')
 }
@@ -52,9 +46,6 @@ function makeRestOptions(endpoint, method, body = {}, options = {}) {
   if (Object.keys(body).length !== 0) {
     if (params.method === 'get') {
       url += '?' + encodeQuery(body)
-    } else {
-      params.body = JSON.stringify(body)
-      params.headers['Content-Type'] = 'application/json'
     }
   }
 

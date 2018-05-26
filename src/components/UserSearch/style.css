@@ -13,10 +13,6 @@
   text-align: center;
 }
 
-.userSearch__inputWrapper {
-  height: 50px;
-}
-
 .userSearch__input {
   display: block;
   width: 40%;
@@ -26,4 +22,9 @@
   background-position: 5px 5px; 
   background-repeat: no-repeat;
   background-size: 30px 40px;
+}
+
+.userSearch__submit button {
+  height: 100%;
+  margin: 4px 2px;
 }

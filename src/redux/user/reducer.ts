@@ -2,35 +2,35 @@ import t from './types'
 import * as I from './interfaces'
 
 interface ActionHandler {
-  readonly [r: string]: (state: I.UserState, action: I.TableInterfaces) => I.UserState
+  readonly [r: string]: (state: I.UserState, action: I.UserInterfaces) => I.UserState
 }
 
 const ACTION_HANDLERS: ActionHandler = {
-  [t.GET_REQUEST]: (state, { title, endpoint }: I.FetchRequest) => ({
+  [t.SEARCH_REQUEST]: (state, { query }: I.SearchRequest) => ({
     ...state,
-    title,
-    endpoint,
+    username: query,
     isLoading: true,
   }),
-  [t.GET_REQUEST_SUCCESS]: (state, { stats }: I.FetchSuccess) => ({
+  [t.SEARCH_REQUEST_SUCCESS]: (state, { items }: I.SearchSuccess) => ({
     ...state,
-    stats,
+    items,
     isLoading: false,
   }),
-  [t.GET_REQUEST_ERROR]: state => ({
+  [t.SEARCH_REQUEST_ERROR]: (state, { error }: I.SearchError) => ({
     ...state,
+    error,
     isLoading: false,
   }),
 }
 
 const initialState = {
-  stats: {},
-  title: '',
-  endpoint: '',
+  username: '',
+  error: '',
+  items: [],
   isLoading: false,
 }
 
-export default function reducer(state = initialState, action: I.TableInterfaces) {
+export default function reducer(state = initialState, action: I.UserInterfaces) {
   const handler = ACTION_HANDLERS[action.type]
   return handler ? handler(state, action) : state
 }

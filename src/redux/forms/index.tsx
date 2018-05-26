@@ -1,3 +1,3 @@
 const asFormDetails = (name: string, fields: string[]) => ({ name, fields })
 
-export const mapQueryForm = asFormDetails('mapQueryForm', [])
+export const userSearchForm = asFormDetails('userSearchForm', [])

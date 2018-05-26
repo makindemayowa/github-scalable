@@ -1,10 +1,8 @@
 import t from './types'
 
-export function getStats(title: string, endpoint: string, offset: number){
+export function searchQuery(query: string) {
   return {
-    type: t.GET_REQUEST,
-    title,
-    endpoint,
-    offset,
+    type: t.SEARCH_REQUEST,
+    query,
   }
 }
