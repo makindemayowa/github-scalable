@@ -3,7 +3,7 @@ const ERROR_MESSAGE = `This endpoint might have request rate limitations or You 
 
 export default {
   api: {
-    BASE_URL: 'http://localhost:5555',
+    BASE_URL: 'https://api.github.com',
   },
   pagination: {
     LIMIT: 16,
