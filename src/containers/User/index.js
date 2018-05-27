@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 import { isLoading, getUserSearchTerm } from 'redux/user/selectors'
-import Dashboard from 'components/Dashboard'
+import User from 'components/User'
 
 const mapStateToProps = (state) => {
   return {
@@ -16,4 +16,4 @@ const mergeProps = (stateProps, dispatchProps, ownProps) => {
   }
 }
 
-export default connect(mapStateToProps, null, mergeProps)(Dashboard)
+export default connect(mapStateToProps, null, mergeProps)(User)

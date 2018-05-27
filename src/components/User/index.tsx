@@ -1,12 +1,12 @@
 import React from 'react'
 import Loading from 'components/Common/Loading'
-import UserListContainer from 'containers/UserList'
+import UserListContainer from 'containers/User/List'
 
-interface DashboardPropsInterface {
+interface UserPropsInterface {
   loading: boolean
   hasSearched: boolean
 }
-const Dashboard = ({ loading, hasSearched }: DashboardPropsInterface) => {
+const User = ({ loading, hasSearched }: UserPropsInterface) => {
     const userList = hasSearched && <UserListContainer />
     return (
       <Loading loading={loading}>
@@ -15,4 +15,4 @@ const Dashboard = ({ loading, hasSearched }: DashboardPropsInterface) => {
     )
 }
 
-export default Dashboard
+export default User

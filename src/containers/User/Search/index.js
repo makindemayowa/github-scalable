@@ -2,7 +2,7 @@ import { connect } from 'react-redux'
 import { reduxForm } from 'redux-form'
 import { userSearchForm } from 'redux/forms'
 import { searchQuery } from 'redux/user/actions'
-import UserSearch from 'components/UserSearch'
+import UserSearch from 'components/User/Search'
 
 const mapDispatchToProps = {
   searchQuery,

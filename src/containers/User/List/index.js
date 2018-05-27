@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 import { getUsers } from 'redux/user/selectors'
-import UserList from 'components/UserList'
+import UserList from 'components/User/List'
 
 const mapStateToProps = (state) => {
   return {
