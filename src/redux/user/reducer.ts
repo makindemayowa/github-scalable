@@ -16,16 +16,19 @@ const ACTION_HANDLERS: ActionHandler = {
     items,
     isLoading: false,
   }),
-  [t.SEARCH_REQUEST_ERROR]: (state, { error }: I.SearchError) => ({
+  [t.SEARCH_REQUEST_ERROR]: (state) => ({
+    ...state,
+    isLoading: false,
+  }),
+  [t.ERROR]: (state: I.UserState, { error }: I.Error) => ({
     ...state,
     error,
-    isLoading: false,
   }),
 }
 
 const initialState = {
   username: '',
-  error: '',
+  error: null,
   items: [],
   isLoading: false,
 }

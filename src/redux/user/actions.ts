@@ -6,3 +6,17 @@ export function searchQuery(query: string) {
     query,
   }
 }
+
+export function error(e: string) {
+  return {
+    type: t.ERROR,
+    error: e,
+  }
+}
+
+export function clearError() {
+  return {
+    type: t.ERROR,
+    error: null,
+  }
+}

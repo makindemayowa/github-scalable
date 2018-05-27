@@ -2,9 +2,18 @@ import types from './types'
 
 export interface UserState {
   username: string
-  error: string
+  error: null | string
   isLoading: boolean
   items: Array<any>
+}
+
+interface SimpleError {
+  error: string,
+}
+
+export interface ClearError {
+  type: types.ERROR,
+  error: null,
 }
 
 export interface SearchRequest {
@@ -12,16 +21,16 @@ export interface SearchRequest {
   query: string
 }
 
+export interface Error extends SimpleError {
+  type: types.ERROR,
+}
+
 export interface SearchSuccess {
   type: types.SEARCH_REQUEST_SUCCESS,
   items: Array<any>
 }
 
-export interface SearchError {
-  type: types.SEARCH_REQUEST_ERROR,
-  error: string
-}
-
 export type UserInterfaces = SearchRequest
   | SearchSuccess
-  | SearchError
+  | Error
+  | ClearError
