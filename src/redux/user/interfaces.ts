@@ -11,6 +11,10 @@ interface SimpleError {
   error: string,
 }
 
+interface SimpleQuery {
+  q: string,
+}
+
 export interface ClearError {
   type: types.ERROR,
   error: null,
@@ -18,7 +22,7 @@ export interface ClearError {
 
 export interface SearchRequest {
   type: types.SEARCH_REQUEST
-  query: string
+  query: SimpleQuery
 }
 
 export interface Error extends SimpleError {

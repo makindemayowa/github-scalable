@@ -6,9 +6,9 @@ interface ActionHandler {
 }
 
 const ACTION_HANDLERS: ActionHandler = {
-  [t.SEARCH_REQUEST]: (state, { query }: I.SearchRequest) => ({
+  [t.SEARCH_REQUEST]: (state, { query: { q } }: I.SearchRequest) => ({
     ...state,
-    username: query,
+    username: q,
     isLoading: true,
   }),
   [t.SEARCH_REQUEST_SUCCESS]: (state, { items: { data: { items } } }: I.SearchSuccess) => ({
