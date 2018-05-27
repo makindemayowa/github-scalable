@@ -11,7 +11,7 @@ const ACTION_HANDLERS: ActionHandler = {
     username: query,
     isLoading: true,
   }),
-  [t.SEARCH_REQUEST_SUCCESS]: (state, { items }: I.SearchSuccess) => ({
+  [t.SEARCH_REQUEST_SUCCESS]: (state, { items: { data: { items } } }: I.SearchSuccess) => ({
     ...state,
     items,
     isLoading: false,

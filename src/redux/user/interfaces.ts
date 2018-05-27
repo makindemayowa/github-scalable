@@ -4,7 +4,7 @@ export interface UserState {
   username: string
   error: null | string
   isLoading: boolean
-  items: Array<any>
+  items: any
 }
 
 interface SimpleError {
@@ -27,7 +27,7 @@ export interface Error extends SimpleError {
 
 export interface SearchSuccess {
   type: types.SEARCH_REQUEST_SUCCESS,
-  items: Array<any>
+  items: any
 }
 
 export type UserInterfaces = SearchRequest
