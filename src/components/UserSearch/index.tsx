@@ -8,21 +8,13 @@ interface HeaderPropsInterface {
   handleSubmit: ((event: React.FormEvent<HTMLFormElement>) => void) | undefined
 }
 
-const renderErrors = ({ touched, error, warning }: any) => (
-  touched && ((error && <div className="hidden error">{error}</div>) ||
-  (warning && <div className="hidden warning">{warning}</div>))
-)
-
-const renderField = ({ input, className, type, placeholder, meta }: any) => (
-  <Fragment>
-    <input
-      className={className}
-      placeholder={placeholder}
-      type={type}
-      {...input}
-    />
-    {renderErrors(meta)}
-  </Fragment>
+const renderField = ({ input, className, type, placeholder }: any) => (
+  <input
+    className={className}
+    placeholder={placeholder}
+    type={type}
+    {...input}
+  />
 )
 
 const UserSearch = ({ handleSubmit, pristine, submitting }: HeaderPropsInterface) =>

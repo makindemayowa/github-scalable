@@ -17,13 +17,6 @@ const mergeProps = (stateProps, dispatchProps, ownProps) => {
 
 const UserSearchForm = reduxForm({
   form: userSearchForm.name,
-  validate: ({ q }) => {
-    const errors = {}
-    if (!q) {
-      errors.q = 'Please enter a github username'
-    }
-    return errors
-  },
 })(UserSearch)
 
 export default connect(null, mapDispatchToProps, mergeProps)(UserSearchForm)
