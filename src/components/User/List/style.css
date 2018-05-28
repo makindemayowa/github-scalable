@@ -1,0 +1,14 @@
+.userList__wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1%;
+}
+
+.userList__content {
+  align-self: flex-start;
+  width: 100%;
+  height: 100%;
+}
