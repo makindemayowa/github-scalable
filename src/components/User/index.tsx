@@ -1,16 +1,23 @@
 import React from 'react'
+import { Route, Switch } from 'react-router-dom'
+import UserSearch from 'containers/User/Search'
 import Loading from 'components/Common/Loading'
 import UserListContainer from 'containers/User/List'
+import './style.css'
 
 interface UserPropsInterface {
   loading: boolean
-  hasSearched: boolean
 }
-const User = ({ loading, hasSearched }: UserPropsInterface) => {
-    const userList = hasSearched && <UserListContainer />
+
+const User = ({ loading }: UserPropsInterface) => {
     return (
       <Loading loading={loading}>
-        {userList}
+        <div className="userDashboard__wrapper">
+          <UserSearch />
+          <Switch>
+            <Route component={UserListContainer} />
+          </Switch>
+        </div>
       </Loading>
     )
 }

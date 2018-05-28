@@ -1,8 +1,10 @@
 import { takeEvery, all, fork, call, put } from 'redux-saga/effects'
+import { push } from 'react-router-redux'
 import { searchUsers } from 'api'
 import t from './types'
 
 function* searchUsersSaga({ query }) {
+  yield put(push('/users'))
   try {
     const items = yield call(searchUsers, query)
     yield put({ type: t.SEARCH_REQUEST_SUCCESS, items })

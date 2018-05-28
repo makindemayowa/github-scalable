@@ -1,11 +1,10 @@
 import { connect } from 'react-redux'
-import { isLoading, getUserSearchTerm } from 'redux/user/selectors'
+import { isLoading } from 'redux/user/selectors'
 import User from 'components/User'
 
 const mapStateToProps = (state) => {
   return {
     loading: isLoading(state),
-    hasSearched: !!getUserSearchTerm(state),
   }
 }
 
