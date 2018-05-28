@@ -20,7 +20,7 @@
 
 .userList__item {
   box-shadow: -1px 1px 3px 1px #dddddd;
-  height: 150px;
+  min-height: 150px;
   width: 70%;
   padding: 0 2%;
   margin: 1%;
@@ -56,4 +56,23 @@
 
 .userListItem__scores .text {
   font-weight: bold;
+}
+
+
+
+/************ MEDIA QUERIES **************/
+
+
+
+
+@media (max-width: 900px) {
+  .userList__body {
+    margin-top: 20%;
+  }
+}
+
+@media (max-width: 600px) {
+  .userList__body {
+    margin-top: 35%;
+  }
 }
