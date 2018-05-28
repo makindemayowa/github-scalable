@@ -4,11 +4,56 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 1%;
+  margin-top: 10%;
 }
 
 .userList__content {
   align-self: flex-start;
   width: 100%;
   height: 100%;
+}
+
+.userList__content .header__wrapper {
+  position: fixed;
+  top: 15%;
+}
+
+.userList__item {
+  box-shadow: -1px 1px 3px 1px #dddddd;
+  height: 150px;
+  width: 70%;
+  padding: 0 2%;
+  margin: 1%;
+}
+
+.userList__body {
+  margin-top: 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.userListItem__picture {
+  width: 100px;
+  height: 100px;
+  border-radius: 50px;
+  display: inline-block;
+}
+
+.userListItem__info {
+  display: inline-block;
+  margin-left: 5%;
+}
+
+.userListItem__username {
+  font-size: 150%;
+}
+
+.userListItem__scores .value {
+  color: #aaaaaa;
+}
+
+.userListItem__scores .text {
+  font-weight: bold;
 }

@@ -13,7 +13,9 @@ const User = ({ loading }: UserPropsInterface) => {
     return (
       <Loading loading={loading}>
         <div className="userDashboard__wrapper">
-          <UserSearch />
+          <div className="userSearch__wrapper">
+            <UserSearch/>
+          </div>
           <Switch>
             <Route component={UserListContainer} />
           </Switch>

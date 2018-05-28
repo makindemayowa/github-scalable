@@ -1,16 +1,37 @@
 import React from 'react'
-import UserHeader from 'components/Common/UserHeader'
+import Header from 'components/User/Header'
 import './style.css'
 
 interface UserListPropsInterface {
   users: Array<any>
 }
 
+const renderList = (items: Array<{}>) => (
+  items.map(({ login, avatar_url, score, html_url }: any) => (
+      <div className="userList__item">
+        <img className="userListItem__picture" src={avatar_url} alt="github user image" />
+        <div className="userListItem__info">
+          <p className="userListItem__username">
+            <a href={html_url} target="_blank">{login}</a>
+          </p>
+          <p className="userListItem__scores">
+            <span className="value">{score}</span>
+            <span className="text"> scores</span></p>
+          <p className="userListItem__scores">{score} scores</p>
+        </div>
+      </div>
+    )
+  )
+)
+
 const renderUsers = (list: Array<{}>) => {
   const headerItems = [`${list.length} results`]
   return (
     <div className="userList__content">
-      <UserHeader items={headerItems} />
+      <Header items={headerItems} />
+        <div className="userList__body">
+          {renderList(list)}
+        </div>
     </div>
   )
 }

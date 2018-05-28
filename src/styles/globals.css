@@ -50,6 +50,7 @@ button:disabled {
 
 a {
   text-decoration: none;
+  color: rgb(62, 184, 241);
 }
 
 input, select {
