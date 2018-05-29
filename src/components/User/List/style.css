@@ -15,6 +15,7 @@
 
 .userList__content .header__wrapper {
   position: fixed;
+  font-weight: bold;
   top: 15%;
 }
 
