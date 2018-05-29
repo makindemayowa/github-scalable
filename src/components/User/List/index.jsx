@@ -5,16 +5,24 @@ import Header from 'components/User/Header'
 import './style.css'
 
 class UserList extends PureComponent {
+  getDimension = (dimension) => {
+    if (window.innerWidth > 600) {
+      return dimension === 'height' ? 200 : window.innerWidth - 100
+    } else {
+      return dimension === 'height' ? 300 : window.innerWidth
+    }
+  }
+
   state = {
-    width: window.innerWidth - 100,
-    rowHeight: window.innerWidth > 600 ? 200 : 300,
+    width: this.getDimension('width'),
+    rowHeight: this.getDimension('height'),
   }
 
   componentDidMount() {
     window.onresize = () => {
       this.setState({
-        width: window.innerWidth - 100,
-        rowHeight: window.innerWidth > 600 ? 200 : 300,
+        width: this.getDimension('width'),
+        rowHeight: this.getDimension('height'),
       })
     }
   }
