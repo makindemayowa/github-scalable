@@ -17,13 +17,14 @@
   position: fixed;
   font-weight: bold;
   top: 15%;
+  z-index: 1;
 }
 
 .userList__item {
   box-shadow: -1px 1px 3px 1px #dddddd;
   min-height: 150px;
   width: 70%;
-  padding: 1% 2%;
+  padding: 2%;
   margin: 1%;
 }
 
@@ -51,6 +52,12 @@
   font-size: 150%;
 }
 
+.userListItem__commit a {
+  color: purple;
+  font-size: 80%;
+  font-weight: bold;
+}
+
 .userListItem__scores .value {
   color: #aaaaaa;
 }
@@ -75,5 +82,9 @@
 @media (max-width: 600px) {
   .userList__body {
     margin-top: 35%;
+  }
+
+  .userListItem__info {
+    display: block;
   }
 }
