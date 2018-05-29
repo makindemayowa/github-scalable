@@ -9,7 +9,10 @@ interface UserListPropsInterface {
 const renderList = (items: Array<{}>) => (
   items.map(({ login, avatar_url, score, html_url }: any) => (
       <div className="userList__item">
-        <img className="userListItem__picture" src={avatar_url} alt="github user image" />
+        <img
+          className="userListItem__picture"
+          src={avatar_url} alt={`${login} user image`}
+        />
         <div className="userListItem__info">
           <p className="userListItem__username">
             <a href={html_url} target="_blank">{login}</a>
