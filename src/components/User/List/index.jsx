@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
+import { Link } from 'react-router-dom'
 import { List } from 'react-virtualized'
 import Header from 'components/User/Header'
 import './style.css'
@@ -44,7 +45,7 @@ class UserList extends PureComponent {
             <span className="value">{score}</span>
             <span className="text"> scores</span></p>
           <p className="userListItem__commit">
-            <a href={html_url} target="_blank">View commits</a>
+            <Link to={`/users/commits/${login}`}>View commits</Link>
           </p>
         </div>
       </div>
