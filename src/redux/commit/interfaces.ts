@@ -2,6 +2,7 @@ import types from './types'
 
 export interface CommitState {
   user: string
+  isLoading: boolean
 }
 
 export interface SetCurrUser {

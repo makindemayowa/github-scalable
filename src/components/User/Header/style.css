@@ -4,6 +4,8 @@
   color: white;
   position: fixed;
   font-weight: bold;
+  display: flex;
+  flex-direction: row;
   top: 15%;
   z-index: 1;
   padding: 1% 1% 1% 3%;

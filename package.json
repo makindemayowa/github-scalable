@@ -70,6 +70,7 @@
     "@types/react-router-redux": "^5.0.13",
     "@types/redux-form": "^7.2.4",
     "@types/redux-logger": "^3.0.6",
+    "@types/uuid": "^3.4.3",
     "awesome-typescript-loader": "^5.0.0",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",

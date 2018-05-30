@@ -54,7 +54,8 @@ class UserList extends PureComponent {
 
   renderUsers = (list) => {
     const { width, rowHeight } = this.state
-    const headerItems = [`${list.length} results`]
+    const resultsEl = (<span>{list.length} results</span>)
+    const headerItems = [resultsEl]
     return (
       <div className="userList__content">
         <Header items={headerItems} />

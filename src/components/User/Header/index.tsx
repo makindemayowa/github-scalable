@@ -7,7 +7,7 @@ interface HeaderPropsInterface {
 
 const Header = ({ items }: HeaderPropsInterface) => (
   <div className="header__wrapper">
-    {items.map(item => <span key={item}>{item}</span>)}
+    {items.map(item => item)}
   </div>
 )
 

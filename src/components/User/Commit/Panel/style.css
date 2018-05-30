@@ -5,7 +5,7 @@
   left: 25%;
   position: fixed;
   overflow: scroll;
-  margin-top: 3%;
+  margin: 3% 0;
   background-color: #eee;
 }
 
@@ -27,14 +27,13 @@
 .commit__author,
 .commit__date,
 .commit__url {
-  margin-left: 1%;
   vertical-align: middle;
 }
 
 .userCommitsPanelItems__wrapper {
   width: 100%;
   padding-left: 3%;
-  margin-top: 10%;
+  margin: 10% 0 20% 0;
 }
 
 .userCommitsPanel__item {
