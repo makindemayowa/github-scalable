@@ -1,10 +1,11 @@
 import React, { PureComponent } from 'react'
+import { v1 } from 'uuid'
 import './style.css'
 
 
 const loader1 = (<span className="loading__background--dark loader1__description repo__description" />)
-const loader2 = (
-  <div className="userCommitsPanel__item">
+const loader2 = () => (
+  <div key={v1()} className="userCommitsPanel__item">
     <h5>Message <span className="loading__background loader2__message commit__message" /></h5>
     <h5 className="loading__background loader2__url commit__url" />
     <h5>Author <span className="loading__background loader2__author" /></h5>
@@ -17,7 +18,7 @@ class Commit extends PureComponent {
     let i = 5
     const loaders = []
     while (i > 0) {
-      loaders.push(loader2)
+      loaders.push(loader2())
       i -= 1
     }
     return loaders

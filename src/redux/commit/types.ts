@@ -1,9 +1,5 @@
 enum Types {
-  SEARCH_REQUEST = 'commit/SEARCH_REQUEST',
-  SEARCH_REQUEST_SUCCESS = 'commit/SEARCH_REQUEST_SUCCESS',
-  SEARCH_REQUEST_ERROR = 'commit/SEARCH_REQUEST_ERROR',
-
-  ERROR = 'commit/ERROR',
+  SET_CURRENT_USER = 'commit/SET_CURRENT_USER',
 }
 
 export default Types

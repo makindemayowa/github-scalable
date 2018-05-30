@@ -1,25 +1,21 @@
-import { takeEvery, all, fork, call, put } from 'redux-saga/effects'
-import { push } from 'react-router-redux'
-import { searchUsers } from 'api'
+import { takeEvery, all, fork, put } from 'redux-saga/effects'
+import { LOCATION_CHANGE } from 'react-router-redux'
+import { matchAiParams } from 'redux/history'
 import t from './types'
 
-function* searchUsersSaga({ query }) {
-  yield put(push('/users'))
-  try {
-    const items = yield call(searchUsers, query)
-    yield put({ type: t.SEARCH_REQUEST_SUCCESS, items })
-  } catch (error) {
-    // TODO: handle errors better
-    yield put({ type: t.SEARCH_REQUEST_ERROR, error })
+function* commitSaga() {
+  const { user } = matchAiParams()
+  if (user) {
+    yield put({ type: t.SET_CURRENT_USER, user })
   }
 }
 
-function* watchSearchUsersSaga() {
-  yield takeEvery(t.SEARCH_REQUEST, searchUsersSaga)
+function* watchCommitSaga() {
+  yield takeEvery(LOCATION_CHANGE, commitSaga)
 }
 
 export default function* () {
   yield all([
-    fork(watchSearchUsersSaga),
+    fork(watchCommitSaga),
   ])
 }

@@ -6,16 +6,14 @@ interface ActionHandler {
 }
 
 const ACTION_HANDLERS: ActionHandler = {
-  [t.SEARCH_REQUEST_ERROR]: (state) => ({
+  [t.SET_CURRENT_USER]: (state: I.CommitState, { user }: I.SetCurrUser) => ({
     ...state,
-    isLoading: false,
+    user,
   }),
 }
 
 const initialState = {
-  username: '',
-  error: null,
-  items: [],
+  user: '',
   isLoading: false,
 }
 

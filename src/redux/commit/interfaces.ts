@@ -1,18 +1,12 @@
 import types from './types'
 
 export interface CommitState {
-  username: string
-  error: null | string
-  isLoading: boolean
-  items: any
+  user: string
 }
 
-interface SimpleError {
-  error: string,
+export interface SetCurrUser {
+  type: types.SET_CURRENT_USER,
+  user: string
 }
 
-export interface Error extends SimpleError {
-  type: types.ERROR,
-}
-
-export type UserInterfaces = Error
+export type UserInterfaces = SetCurrUser
