@@ -1,5 +1,5 @@
 import { takeEvery, all, fork, call, put } from 'redux-saga/effects'
-import { push } from 'react-router-redux'
+import { push, goBack } from 'react-router-redux'
 import { searchUsers } from 'api'
 import t from './types'
 
@@ -14,12 +14,21 @@ function* searchUsersSaga({ query }) {
   }
 }
 
+function* backRouteRequestSaga() {
+  yield put(goBack())
+}
+
 function* watchSearchUsersSaga() {
   yield takeEvery(t.SEARCH_REQUEST, searchUsersSaga)
+}
+
+function* watchBackRouteRequestSaga() {
+  yield takeEvery(t.PREVIOUS_ROUTE_REQUEST, backRouteRequestSaga)
 }
 
 export default function* () {
   yield all([
     fork(watchSearchUsersSaga),
+    fork(watchBackRouteRequestSaga),
   ])
 }

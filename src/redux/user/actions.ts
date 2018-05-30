@@ -20,3 +20,9 @@ export function clearError() {
     error: null,
   }
 }
+
+export function goBack() {
+  return {
+    type: t.PREVIOUS_ROUTE_REQUEST,
+  }
+}
