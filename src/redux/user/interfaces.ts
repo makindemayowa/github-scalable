@@ -4,7 +4,7 @@ export interface UserState {
   username: string
   error: null | string
   isLoading: boolean
-  items: any
+  items: Array<null | {}>
 }
 
 interface SimpleError {

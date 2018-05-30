@@ -1,0 +1,45 @@
+.userCommits__sidebar {
+  display: inline-block;
+  height: 100%;
+  width: 25%;
+  position: fixed;
+  overflow: scroll;
+  border-right: 2px solid #ccc;
+  margin-top: 5%;
+}
+
+.userCommits__sidebar > h2 {
+  padding: 3%;
+  width: 100%;
+  position: fixed;
+  background-color: #ccc;
+}
+
+.userCommitsSidebarItem__wrapper {
+  padding-top: 40%;
+}
+
+.userCommitsSidebar__item {
+  padding-left: 5%;
+  border-bottom: 2px solid #ccc;
+}
+
+
+
+
+/********************** LOADERS ***********************/
+
+
+
+
+.loader__name {
+  width: 60%;
+}
+
+.loader__status {
+  width: 30%;
+}
+
+.loader__url {
+  width: 10%;
+}

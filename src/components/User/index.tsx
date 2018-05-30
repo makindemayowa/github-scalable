@@ -1,15 +1,18 @@
 import React from 'react'
-import { Route, Switch, RouteComponentProps } from 'react-router-dom'
+import { Route, Switch } from 'react-router-dom'
 import UserSearch from 'containers/User/Search'
 import Loading from 'components/Common/Loading'
 import UserListContainer from 'containers/User/List'
 import CommitLayout from 'layouts/User/Commit'
 import './style.css'
 
+interface MatchProps {
+  path: string
+}
+
 interface UserPropsInterface {
   loading: boolean
-  match: any
-  path: RouteComponentProps<any>
+  match: MatchProps
 }
 
 const User = ({ loading, match: { path } }: UserPropsInterface) => {

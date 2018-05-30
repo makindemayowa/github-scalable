@@ -65,22 +65,24 @@ input, select {
   padding: 12px 20px 12px 40px;
 }
 
-.error {
-  color: red;
+.loading__background {
+  animation: colorchange 500ms linear 0s infinite;
+  height: 20px;
 }
 
-.warning {
-  color: chocolate;
+.loading__background--dark {
+  animation: darkcolorchange 500ms linear 0s infinite;
+  height: 20px;
 }
 
-.hidden {
-  position: absolute;
-  margin: 5% 0;
+@keyframes colorchange {
+  0%   {background: #eaeaea;}
+  50%  {background: #f0f0f0;}
+  100% {background: #eaeaea;}
 }
 
-@media (max-width: 600px) {
-  .hidden {
-    margin: 7% 0;
-    font-size: 70%;
-  }
+@keyframes darkcolorchange {
+  0%   {background: #ccc;}
+  50%  {background: #ddd;}
+  100% {background: #ccc;}
 }

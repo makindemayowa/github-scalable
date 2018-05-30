@@ -1,0 +1,81 @@
+.userCommits__panel {
+  display: inline-block;
+  height: 100%;
+  width: 75%;
+  left: 25%;
+  position: fixed;
+  overflow: scroll;
+  margin-top: 3%;
+  background-color: #eee;
+}
+
+.userCommits__panel > h4 {
+  border-bottom: 1px solid #aaa;
+  width: 100%;
+  padding: 2%;
+  position: fixed;
+  background-color: #eee;
+}
+
+.userCommits__panel > h2 {
+  width: 100%;
+  padding: 2%;
+}
+
+.repo__description,
+.commit__message,
+.commit__author,
+.commit__date,
+.commit__url {
+  margin-left: 1%;
+  vertical-align: middle;
+}
+
+.userCommitsPanelItems__wrapper {
+  width: 100%;
+  padding-left: 3%;
+  margin-top: 10%;
+}
+
+.userCommitsPanel__item {
+  width: 90%;
+  padding: 2%;
+  margin-bottom: 3%;
+  background-color: white;
+  box-shadow: -1px 1px 3px 1px #aaa;
+}
+
+.userCommitsPanel__item h5 {
+  margin: 1%;
+}
+
+
+
+/******************* LOADERS *********************/
+
+
+
+.loader1__description,
+.loader2__message,
+.loader2__url,
+.loader2__author,
+.loader2__date {
+  display: inline-block;
+}
+
+.loader1__description {
+  width: 50%;
+}
+
+.loader2__message {
+  width: 70%;
+}
+
+.loader2__url {
+  width: 5%;
+}
+
+.loader2__author,
+.loader2__date {
+  width: 20%;
+}

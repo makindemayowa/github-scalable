@@ -1,9 +1,8 @@
 import { connect } from 'react-redux'
-import Header from 'components/User/Header'
+import Header from 'components/User/Commit/Header'
 
 const mergeProps = (stateProps, dispatchProps, ownProps) => {
   return {
-    items: ['name'],
     ...ownProps,
   }
 }
