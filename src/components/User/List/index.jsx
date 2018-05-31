@@ -19,13 +19,19 @@ class UserList extends PureComponent {
     rowHeight: this.getDimension('height'),
   }
 
+  resizeDimensions = () => {
+    this.setState({
+      width: this.getDimension('width'),
+      rowHeight: this.getDimension('height'),
+    })
+  }
+
   componentDidMount() {
-    window.onresize = () => {
-      this.setState({
-        width: this.getDimension('width'),
-        rowHeight: this.getDimension('height'),
-      })
-    }
+    window.addEventListener('resize', this.resizeDimensions)
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.resizeDimensions)
   }
 
   rowRenderer = ({ index, key, style }) => {
@@ -54,7 +60,7 @@ class UserList extends PureComponent {
 
   renderUsers = (list) => {
     const { width, rowHeight } = this.state
-    const resultsEl = (<span>{list.length} results</span>)
+    const resultsEl = (<span key="results-count">{list.length} results</span>)
     const headerItems = [resultsEl]
     return (
       <div className="userList__content">

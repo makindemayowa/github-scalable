@@ -16,7 +16,7 @@
   color: #fff;
   border-color: #fff;
   background-image: url('../../../../images/common/funnel.svg');
-  background-position: 5px 0px; 
+  background-position: 5px center; 
   background-repeat: no-repeat;
   background-size: 20px 30px;
 }
@@ -25,7 +25,7 @@
   color: rgba(255, 255, 255, .7);
 }
 
-.userSearch__inputWrapper {
+.filterInput .userSearch__inputWrapper {
   width: auto;
 }
 

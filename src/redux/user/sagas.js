@@ -9,7 +9,6 @@ function* searchUsersSaga({ query }) {
     const items = yield call(searchUsers, query)
     yield put({ type: t.SEARCH_REQUEST_SUCCESS, items })
   } catch (error) {
-    // TODO: handle errors better
     yield put({ type: t.SEARCH_REQUEST_ERROR, error })
   }
 }

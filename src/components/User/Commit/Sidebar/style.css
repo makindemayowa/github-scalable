@@ -12,35 +12,44 @@
   padding: 3%;
   width: 100%;
   position: fixed;
+  z-index: 1;
   background-color: #ccc;
 }
 
 .userCommitsSidebarItem__wrapper {
-  padding-top: 40%;
+  padding: 38% 0 30% 0;
   margin-bottom: 10%;
 }
 
 .userCommitsSidebar__item {
   padding-left: 5%;
+  cursor: pointer;
   border-bottom: 2px solid #ccc;
 }
 
-
-
-
-/********************** LOADERS ***********************/
-
-
-
-
-.loader__name {
-  width: 60%;
+.userCommitsSidebar__item:hover {
+  background-color: #fafafa;
 }
 
-.loader__status {
+.userCommitsSidebar__item.active {
+  background-color: #eaeaea;
+}
+
+.repo__name {
+  width: 90%;
+  color: #999;
+}
+
+.repo__status {
   width: 30%;
+  color: rgb(62, 184, 241);
 }
 
-.loader__url {
+span.public {
+  color: coral;
+}
+
+.repo__url {
   width: 10%;
 }
+

@@ -70,19 +70,8 @@ input, select {
   height: 20px;
 }
 
-.loading__background--dark {
-  animation: darkcolorchange 500ms linear 0s infinite;
-  height: 20px;
-}
-
 @keyframes colorchange {
   0%   {background: #eaeaea;}
   50%  {background: #f0f0f0;}
   100% {background: #eaeaea;}
-}
-
-@keyframes darkcolorchange {
-  0%   {background: #ccc;}
-  50%  {background: #ddd;}
-  100% {background: #ccc;}
 }

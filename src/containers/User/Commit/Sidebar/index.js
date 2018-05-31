@@ -1,10 +1,25 @@
 import { connect } from 'react-redux'
+import { isLoadingRepos, getRepos } from 'redux/commit/selectors'
+import { getCommits } from 'redux/commit/actions'
 import Sidebar from 'components/User/Commit/Sidebar'
 
-const mergeProps = (stateProps, dispatchProps, ownProps) => {
+const mapDispatchToProps = {
+  getCommits,
+}
+
+const mapStateToProps = (state) => {
   return {
-    ...ownProps,
+    repos: getRepos(state),
+    isLoading: isLoadingRepos(state),
   }
 }
 
-export default connect(null, null, mergeProps)(Sidebar)
+const mergeProps = (stateProps, dispatchProps, ownProps) => {
+  return {
+    ...dispatchProps,
+    ...ownProps,
+    ...stateProps,
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps, mergeProps)(Sidebar)

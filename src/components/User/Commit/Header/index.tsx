@@ -18,13 +18,13 @@ const HeaderWrapper = ({ goBack, user }: HeaderWrapperPropsInterface) => {
   )
 
   const filterInput = (
-    <Fragment key="filterInput">
+    <span key="filterInput" className="filterInput">
       <Search
         name="commit"
         className="headerInput__filter"
         placeholder="Filter commit message"
       />
-    </Fragment>
+    </span>
   )
 
   return (
