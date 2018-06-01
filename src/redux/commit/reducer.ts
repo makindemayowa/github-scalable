@@ -40,11 +40,12 @@ const ACTION_HANDLERS: ActionHandler = {
   }),
   [t.GET_COMMITS_SUCCESS]: (state: I.CommitState, { commits: { data } }: I.GetCommitsSuccess) => {
     const commits = data.map(({ commit: { message, committer: { name, date } }, html_url }: any) => {
+      const formattedDate = new Date(date)
       return {
-        date,
         message,
         author_name: name,
         commit_url: html_url,
+        date: formattedDate.toString(),
       }
     })
     return {
