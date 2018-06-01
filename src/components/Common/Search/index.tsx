@@ -8,24 +8,35 @@ interface HeaderPropsInterface {
   placeholder: string
   pristine?: boolean
   submitting?: boolean
+  disabled?: boolean
   handleSubmit?: ((event: React.FormEvent<HTMLFormElement>) => void) | undefined
 }
 
-const renderField = ({ input, className, type, placeholder }: any) => (
+const renderField = ({ input, disabled, className, type, placeholder }: any) => (
   <input
+    type={type}
+    disabled={disabled}
     className={className}
     placeholder={placeholder}
-    type={type}
     {...input}
   />
 )
 
-const UserSearch = ({ handleSubmit, pristine, submitting, name, placeholder, className }: HeaderPropsInterface) =>
+const UserSearch = ({
+  handleSubmit,
+  pristine,
+  submitting,
+  name,
+  placeholder,
+  disabled,
+  className,
+}: HeaderPropsInterface) =>
   <Fragment>
     <form className="userSearch__inputWrapper" onSubmit={handleSubmit}>
       <Field
         name={name}
         type="text"
+        disabled={disabled}
         component={renderField}
         placeholder={placeholder}
         className={className || 'userSearch__input'}

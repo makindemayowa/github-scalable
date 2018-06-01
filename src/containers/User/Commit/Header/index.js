@@ -3,7 +3,7 @@ import { reduxForm } from 'redux-form'
 import Header from 'components/User/Commit/Header'
 import { goBack } from 'redux/user/actions'
 import { commitSearchForm } from 'redux/forms'
-import { getCurrUser } from 'redux/commit/selectors'
+import { getCurrUser, getCommits } from 'redux/commit/selectors'
 
 const mapDispatchToProps = {
   goBack,
@@ -12,13 +12,14 @@ const mapDispatchToProps = {
 const mapStateToProps = (state) => {
   return {
     user: getCurrUser(state),
+    commits: getCommits(state),
   }
 }
 
 const mergeProps = (stateProps, dispatchProps, ownProps) => {
   return {
-    user: stateProps.user,
-    goBack: () => dispatchProps.goBack(),
+    ...stateProps,
+    ...dispatchProps,
     ...ownProps,
   }
 }

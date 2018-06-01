@@ -25,6 +25,10 @@
   background-size: 30px 40px;
 }
 
+.headerInput__filter:disabled {
+  background-color: rgba(200, 200, 200, .5);
+}
+
 .userSearch__submit button {
   height: 100%;
   margin: 4px 2px;
