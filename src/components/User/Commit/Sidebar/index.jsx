@@ -23,7 +23,7 @@ class Commit extends PureComponent {
     return loaders
   }
 
-  handleClick = (e, name, description) => {
+  handleClick = (e, name, description, index) => {
     const { getCommits } = this.props
     const currAcitve = document.querySelector('.active')
     if (currAcitve) {
@@ -31,6 +31,7 @@ class Commit extends PureComponent {
     }
     e.target.classList.add('active')
     getCommits(name, description)
+    this.activeIndex = index
   }
 
   rowRenderer = ({ index, key, style }) => {
@@ -41,8 +42,9 @@ class Commit extends PureComponent {
       <div
         key={key}
         style={style}
+        data-id={`${index}`}
         className="userCommitsSidebar__item"
-        onClick={(e) => this.handleClick(e, name, description)}
+        onClick={(e) => this.handleClick(e, name, description, index)}
       >
         <h5 className="repo__name">{name}</h5>
         <p className="repo__status">
@@ -53,6 +55,13 @@ class Commit extends PureComponent {
         </p>
       </div>
     )
+  }
+
+  onRowsRendered = () => {
+    const activeEl = document.querySelector(`[data-id="${this.activeIndex}"]`)
+    if (activeEl) {
+      activeEl.classList.add('active')
+    }
   }
 
   render() {
@@ -70,6 +79,7 @@ class Commit extends PureComponent {
               style={{ outline: 0 }}
               rowCount={repos.length}
               rowRenderer={this.rowRenderer}
+              onRowsRendered={this.onRowsRendered}
             />
           }
         </div>
