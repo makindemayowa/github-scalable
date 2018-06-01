@@ -9,6 +9,9 @@ enum Types {
   GET_COMMITS_REQUEST = 'commit/GET_COMMITS_REQUEST',
   GET_COMMITS_SUCCESS = 'commit/GET_COMMITS_SUCCESS',
   GET_COMMITS_ERROR = 'commit/GET_COMMITS_ERROR',
+
+  GET_COMMITS_FILTER = '@@redux-form/CHANGE',
+  SET_COMMITS_FILTER = 'commit/SET_COMMITS_FILTER',
 }
 
 export default Types

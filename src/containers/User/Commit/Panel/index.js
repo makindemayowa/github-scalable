@@ -3,6 +3,7 @@ import Panel from 'components/User/Commit/Panel'
 import {
   isLoadingCommits,
   getCommits,
+  getCommitsFilter,
   getActiveRepo,
   getActiveRepoDescription,
 } from 'redux/commit/selectors'
@@ -10,6 +11,7 @@ import {
 const mapStateToProps = (state) => {
   return {
     commits: getCommits(state),
+    filter: getCommitsFilter(state),
     isLoading: isLoadingCommits(state),
     hasSelected: !!getActiveRepo(state),
     description: getActiveRepoDescription(state),

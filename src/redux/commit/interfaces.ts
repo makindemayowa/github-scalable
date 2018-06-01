@@ -3,12 +3,18 @@ import types from './types'
 export interface CommitState {
   user: string
   error: string
+  filter: string
   activeRepo: null | string
   activeRepoDescription: string
   isLoadingRepos: boolean
   isLoadingCommits: boolean
   repos: Array<null | {}>
   commits: Array<null | {}>
+}
+
+export interface SetCommitFilter {
+  type: types.SET_COMMITS_FILTER
+  filter: string
 }
 
 export interface SetCurrUser {
@@ -52,6 +58,7 @@ export interface GetCommitsError {
 }
 
 export type UserInterfaces = SetCurrUser
+ | SetCommitFilter
  | SetCurrRepo
  | GetReposSuccess
  | GetReposError

@@ -1,7 +1,8 @@
-import { takeEvery, all, select, fork, put, call } from 'redux-saga/effects'
+import { takeEvery, take, all, select, fork, put, call } from 'redux-saga/effects'
 import { LOCATION_CHANGE } from 'react-router-redux'
 import { matchAiParams } from 'redux/history'
 import { getCurrUser } from 'redux/commit/selectors'
+import { commitSearchForm } from 'redux/forms'
 import { getRepos, getCommits } from 'api'
 import t from './types'
 
@@ -29,6 +30,15 @@ function* commitSaga({ repo }) {
   }
 }
 
+function* watchFilterCommitSaga() {
+  yield take((action) => action.type === t.GET_COMMITS_FILTER &&
+    action.meta.form === commitSearchForm.name)
+  while (true) {
+    const { payload } = yield take(t.GET_COMMITS_FILTER)
+    yield put({ type: t.SET_COMMITS_FILTER, filter: payload })
+  }
+}
+
 function* watchCommitRouteSaga() {
   yield takeEvery(LOCATION_CHANGE, commitRouteSaga)
 }
@@ -41,5 +51,6 @@ export default function* () {
   yield all([
     fork(watchCommitRouteSaga),
     fork(watchCommitRequestSaga),
+    fork(watchFilterCommitSaga),
   ])
 }

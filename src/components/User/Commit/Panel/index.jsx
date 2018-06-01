@@ -86,8 +86,9 @@ class Commit extends PureComponent {
   }
 
   renderCommits = () => {
-    const { isLoading, commits } = this.props
+    const { isLoading, commits, filter } = this.props
     const { width, rowHeight } = this.state
+    console.log('filter', filter) // eslint-disable-line
     return (
       <Fragment>
         <h4 className="repo_description">
@@ -122,6 +123,7 @@ class Commit extends PureComponent {
 Commit.propTypes = {
   isLoading: PropTypes.bool.isRequired,
   hasSelected: PropTypes.bool.isRequired,
+  filter: PropTypes.string.isRequired,
   commits: PropTypes.array.isRequired,
   description: PropTypes.string,
 }
