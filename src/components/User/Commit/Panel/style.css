@@ -32,6 +32,10 @@
   padding: 2%;
 }
 
+.repo_description {
+  box-shadow: 5px 5px 8px 5px rgba(200, 200, 200, .5);
+}
+
 .repo_description span {
   color: #999;
 }
@@ -41,6 +45,7 @@
 .commit__date,
 .commit__url {
   vertical-align: middle;
+  padding-bottom: 1%;
 }
 
 .userCommitsPanelItems__wrapper {
@@ -69,7 +74,47 @@
   width: 5%;
 }
 
+.commit__author {
+  color: darkgoldenrod;
+}
+
+.commit__date {
+  color: #aaa;
+}
+
 .commit__author,
 .commit__date {
   width: 50%;
+}
+
+
+
+/******************** MEDIA QUERIES **********************/
+
+
+
+
+@media (max-width: 1000px) {
+  .userCommitsPanelItems__wrapper {
+    margin-top: 15%;
+  }
+
+  .userCommits__panel {
+    margin-top: 5%;
+  }
+}
+
+@media (max-width: 700px) {
+  .userCommits__panel {
+    margin-top: 7%;
+  }
+  .userCommitsPanelItems__wrapper {
+    margin-top: 20%;
+  }
+}
+
+@media (max-width: 600px) {
+  .userCommits__panel {
+    margin-top: 9%;
+  }
 }

@@ -3,6 +3,7 @@ import { List } from 'react-virtualized'
 import PropTypes from 'prop-types'
 import lodash from 'lodash'
 import { v1 } from 'uuid'
+import { getDimension } from 'utils'
 import './style.css'
 
 const renderLoaderEl = () => (
@@ -15,24 +16,16 @@ const renderLoaderEl = () => (
 )
 
 class Commit extends PureComponent {
-  getDimension = (dimension) => {
-    if (window.innerWidth > 600) {
-      return dimension === 'height' ? 200 : window.innerWidth - 300
-    } else {
-      return dimension === 'height' ? 300 : window.innerWidth
-    }
-  }
-
   state = {
-    width: this.getDimension('width'),
-    rowHeight: this.getDimension('height'),
+    width: getDimension('width', 200, 200),
+    rowHeight: getDimension('height', 200, 200),
     commits: [],
   }
 
   resizeDimensions = () => {
     this.setState({
-      width: this.getDimension('width'),
-      rowHeight: this.getDimension('height'),
+      width: getDimension('width', 200, 200),
+      rowHeight: getDimension('height', 200, 200),
     })
   }
 

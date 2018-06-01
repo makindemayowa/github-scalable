@@ -24,7 +24,7 @@ export interface SetCurrUser {
 
 export interface SetCurrRepo {
   type: types.SET_CURRENT_REPO
-  repo: string
+  repo: string | null
 }
 
 export interface GetReposSuccess {

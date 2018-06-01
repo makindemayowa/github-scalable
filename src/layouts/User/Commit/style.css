@@ -7,6 +7,10 @@
   margin-top: 10%;
 }
 
+.userCommits__wrapper .header__wrapper {
+  box-shadow: none;
+}
+
 .userCommits__panelWrapper {
   position: fixed;
   top: 15%;

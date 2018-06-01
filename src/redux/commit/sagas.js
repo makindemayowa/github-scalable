@@ -9,6 +9,7 @@ import t from './types'
 function* commitRouteSaga() {
   const { user } = matchAiParams()
   if (user) {
+    yield put({ type: t.SET_CURRENT_REPO, repo: null })
     yield put({ type: t.SET_CURRENT_USER, user })
     yield put({ type: t.GET_REPOS_REQUEST })
     try {

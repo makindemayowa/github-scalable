@@ -2,27 +2,20 @@ import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
 import { List } from 'react-virtualized'
+import { getDimension } from 'utils'
 import Header from 'components/User/Header'
 import './style.css'
 
 class UserList extends PureComponent {
-  getDimension = (dimension) => {
-    if (window.innerWidth > 600) {
-      return dimension === 'height' ? 200 : window.innerWidth - 100
-    } else {
-      return dimension === 'height' ? 300 : window.innerWidth
-    }
-  }
-
   state = {
-    width: this.getDimension('width'),
-    rowHeight: this.getDimension('height'),
+    width: getDimension('width'),
+    rowHeight: getDimension('height'),
   }
 
   resizeDimensions = () => {
     this.setState({
-      width: this.getDimension('width'),
-      rowHeight: this.getDimension('height'),
+      width: getDimension('width'),
+      rowHeight: getDimension('height'),
     })
   }
 

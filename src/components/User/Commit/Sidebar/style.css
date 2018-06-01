@@ -2,10 +2,10 @@
   display: inline-block;
   height: 100%;
   width: 25%;
+  margin-top: 3%;
   position: fixed;
   overflow: scroll;
   border-right: 2px solid #ccc;
-  margin-top: 3%;
 }
 
 .userCommits__sidebar > h2 {
@@ -14,6 +14,7 @@
   position: fixed;
   z-index: 1;
   background-color: #ccc;
+  box-shadow: 5px 5px 8px 5px rgba(200, 200, 200, .5);
 }
 
 .userCommitsSidebarItem__wrapper {
