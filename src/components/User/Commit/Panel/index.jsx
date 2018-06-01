@@ -1,6 +1,7 @@
 import React, { PureComponent, Fragment } from 'react'
 import { List } from 'react-virtualized'
 import PropTypes from 'prop-types'
+import lodash from 'lodash'
 import { v1 } from 'uuid'
 import './style.css'
 
@@ -25,6 +26,7 @@ class Commit extends PureComponent {
   state = {
     width: this.getDimension('width'),
     rowHeight: this.getDimension('height'),
+    commits: [],
   }
 
   resizeDimensions = () => {
@@ -32,6 +34,14 @@ class Commit extends PureComponent {
       width: this.getDimension('width'),
       rowHeight: this.getDimension('height'),
     })
+  }
+
+  static getDerivedStateFromProps(nextProps) {
+    const pattern = new RegExp(lodash.escapeRegExp(nextProps.filter), 'i')
+    const isMatch = (result => pattern.test(result.message))
+    return {
+      commits: lodash.filter(nextProps.commits, isMatch),
+    }
   }
 
   componentDidMount() {
@@ -71,7 +81,7 @@ class Commit extends PureComponent {
   )
 
   rowRenderer = ({ index, key, style }) => {
-    const { commits } = this.props
+    const { commits } = this.state
     const { message, date, commit_url, author_name } = commits[index]
     return (
       <div key={key} style={style} className="userCommitsPanel__item">
@@ -86,9 +96,8 @@ class Commit extends PureComponent {
   }
 
   renderCommits = () => {
-    const { isLoading, commits, filter } = this.props
-    const { width, rowHeight } = this.state
-    console.log('filter', filter) // eslint-disable-line
+    const { isLoading } = this.props
+    const { width, rowHeight, commits } = this.state
     return (
       <Fragment>
         <h4 className="repo_description">
