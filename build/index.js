@@ -9,7 +9,7 @@ import devConfig from './webpack.dev'
 import prodConfig from './webpack.prod'
 
 const app = new Koa()
-const publicPath = convert(serve(path.join(__dirname, '../dist/')))
+const publicPath = convert(serve(path.join(__dirname, '../src/index.html')))
 
 app.use(publicPath)
 
