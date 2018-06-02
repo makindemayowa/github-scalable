@@ -17,7 +17,7 @@ A simple Github user crawling application
 8. Modular import - Used to avoid require import syntax
 9. Async await functions - Used to let the compiler know it has to await the result of another function before proceeding with execution
 
-## Typecript was also used to help catch potential bugs by implementing type checking
+###### Typecript was also used to help catch potential bugs by implementing type checking
 
 ## Local Setup
 1. clone the repo to your local machine
