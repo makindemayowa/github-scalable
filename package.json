@@ -27,7 +27,15 @@
         }
       ],
       "stage-2"
-    ]
+    ],
+    "env": {
+      "production": {
+        "plugins": [
+          "transform-react-remove-prop-types",
+          "transform-react-constant-elements"
+        ]
+      }
+    }
   },
   "author": "Olarewaju Akeem Opeyemi",
   "license": "MIT",
