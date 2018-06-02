@@ -32,11 +32,14 @@ function* commitSaga({ repo }) {
 }
 
 function* watchFilterCommitSaga() {
-  yield take((action) => action.type === t.GET_COMMITS_FILTER &&
+  let commitFilterForm = yield take((action) =>
+    action.type === t.GET_COMMITS_FILTER &&
     action.meta.form === commitSearchForm.name)
-  while (true) {
+
+  while (true && commitFilterForm) {
     const { payload } = yield take(t.GET_COMMITS_FILTER)
     yield put({ type: t.SET_COMMITS_FILTER, filter: payload })
+    commitFilterForm = yield take((action) => action.meta.form === commitSearchForm.name)
   }
 }
 
