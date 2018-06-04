@@ -6,10 +6,6 @@ interface ActionHandler {
 }
 
 const ACTION_HANDLERS: ActionHandler = {
-  [t.SET_COMMITS_FILTER]: (state: I.CommitState, { filter }: I.SetCommitFilter) => ({
-    ...state,
-    filter,
-  }),
   [t.SET_CURRENT_USER]: (state: I.CommitState, { user }: I.SetCurrUser) => ({
     ...state,
     user,
@@ -66,7 +62,6 @@ const initialState = {
   commits: [],
   user: '',
   error: '',
-  filter: '',
   activeRepo: null,
   isLoadingRepos: true,
   isLoadingCommits: false,

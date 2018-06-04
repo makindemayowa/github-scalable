@@ -4,7 +4,6 @@ import { RootReducerInterface } from 'redux/rootReducer'
 export const getRepos = (state: RootReducerInterface) => state.commit.repos
 export const getCurrUser = (state: RootReducerInterface) => state.commit.user
 export const getCommits = (state: RootReducerInterface) => state.commit.commits
-export const getCommitsFilter = (state: RootReducerInterface) => state.commit.filter
 export const getActiveRepo = (state: RootReducerInterface) => state.commit.activeRepo
 export const isLoadingRepos = (state: RootReducerInterface) => state.commit.isLoadingRepos
 export const isLoadingCommits = (state: RootReducerInterface) => state.commit.isLoadingCommits
